@@ -2,7 +2,7 @@
 
 Portafolio profesional bilingüe (ES/EN), construido con Next.js y alimentado por un CMS headless propio.
 
-**[Ver sitio en vivo](https://tu-dominio.com)** — reemplaza este link cuando esté desplegado.
+**[Ver sitio en vivo](https://chrisdevrift.com/)** — reemplaza este link cuando esté desplegado.
 
 ---
 
