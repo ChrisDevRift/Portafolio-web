@@ -1,0 +1,114 @@
+{
+    "id": 2,
+    "slug": "printcost",
+    "title": "PrintCost",
+    "subtitle": "Estimador automático de costos de impresión",
+    "featured": true,
+    "status": "development",
+    "year": 2026,
+    "category": [
+        "Desktop App",
+        "Windows",
+        "Automatización"
+    ],
+    "description": "Aplicación de escritorio para Windows que intercepta trabajos de impresión mediante una impresora virtual, analiza visualmente cada página para estimar la cobertura de tinta por canal CMYK, y calcula automáticamente el costo real y precio sugerido de cada impresión. Incluye historial de trabajos, exportación de reportes, cola de impresión con selección de impresora por trabajo, y sistema de banners publicitarios con caché local.",
+    "shortDescription": "App de escritorio que analiza PDFs en tiempo real para estimar costos de impresión por cobertura CMYK, pensada para papelerías e imprentas.",
+    "problem": "La estimación manual de costos de impresión es propensa a errores y consume mucho tiempo, especialmente en entornos con alta volumetría de trabajos.",
+    "solution": "Implementar una solución automática que analice visualmente los documentos PDF y calcule los costos de impresión basados en la cobertura de tinta por canal CMYK.",
+    "coverImage": "",
+    "gallery": [],
+    "technologies": [
+        "Python 3.14",
+        "CustomTkinter",
+        "PyMuPDF",
+        "NumPy",
+        "SQLite",
+        "Pillow",
+        "Watchdog",
+        "ReportLab",
+        "OpenPyXL",
+        "pywin32",
+        "Pystray",
+        "Sumatra PDF"
+    ],
+    "features": [
+        "Análisis de cobertura CMYK por página mediante renderizado con PyMuPDF y cálculo vectorizado con NumPy",
+        "Detección automática de nuevos PDFs en carpeta vigilada via Watchdog",
+        "Cálculo de costos basado en precio y cantidad de tinta comprada en ml",
+        "Cola de trabajos con selección de impresora diferente por trabajo",
+        "Reenvío silencioso a impresora física via Sumatra PDF",
+        "Historial de trabajos en SQLite con consultas por día, mes y fecha específica",
+        "Exportación de reportes en Excel, CSV, PDF carta y PDF ticket 80mm",
+        "Tipos de papel personalizados (opalina, fotográfico, sticker, etc.)",
+        "Sistema de banners publicitarios con caché local e imágenes descargadas",
+        "Modo claro y oscuro con paleta completa",
+        "System tray — vive en segundo plano sin interrumpir el flujo de trabajo",
+        "Selector de copias con recálculo de costos en tiempo real",
+        "Precio sugerido editable por trabajo"
+    ],
+    "responsibilities": [
+        "Diseño e implementación completa de la arquitectura de la aplicación",
+        "Desarrollo del motor de análisis CMYK con PyMuPDF y NumPy",
+        "Implementación de la interfaz gráfica con CustomTkinter",
+        "Integración con APIs de Windows para gestión de impresoras via pywin32",
+        "Diseño del sistema de persistencia con SQLite y JSON",
+        "Implementación del sistema de banners con caché local y descarga asíncrona",
+        "Generación de reportes en múltiples formatos con ReportLab y OpenPyXL"
+    ],
+    "client": "Uso personal / distribución pública",
+    "duration": {
+        "start": "2026-05",
+        "end": ""
+    },
+    "teamSize": 1,
+    "role": "Desarrollador Full Stack Desktop",
+    "challenges": [
+        {
+            "title": "Intercepción de impresión",
+            "description": "Interceptar trabajos de impresión sin depender de una marca específica de impresora, resuelto usando una impresora virtual como PDFCreator como intermediaria"
+        },
+        {
+            "title": "Estimación CMYK",
+            "description": "Estimar cobertura de tinta CMYK con precisión razonable sin acceso al RIP de la impresora, resuelto mediante conversión RGB→CMYK por canal con NumPy sobre páginas renderizadas"
+        },
+        {
+            "title": "Impresión silenciosa en Windows",
+            "description": "Reenviar trabajos a impresoras físicas de forma silenciosa y confiable en Windows, resuelto usando Sumatra PDF con cadena de fallback a ShellExecute"
+        },
+        {
+            "title": "Persistencia de datos",
+            "description": "Mantener datos del usuario separados del ejecutable para soportar actualizaciones sin pérdida de información, resuelto almacenando todo en AppData/Local/PrintCost"
+        },
+        {
+            "title": "Procesamiento eficiente de documentos",
+            "description": "Procesar documentos de 50 a 100 páginas sin bloquear la interfaz, resuelto con ThreadPoolExecutor para análisis paralelo por página y reducción de DPI de renderizado"
+        }
+    ],
+    "results": [
+        "Tiempo de análisis reducido en ~70% al pasar de procesamiento secuencial a paralelo con DPI optimizado",
+        "Sistema funcional que detecta, analiza y reenvía trabajos de impresión de forma completamente automática",
+        "Historial completo con cálculo de ganancias por día y mes listo para uso en entorno real de papelería",
+        "Arquitectura modular que permite escalar a versión SaaS o punto de venta en futuras iteraciones"
+    ],
+    "lessons": [
+        "El modo RAW de win32print no es compatible con impresoras de inyección de tinta domésticas — requieren pasar por el driver de Windows",
+        "CustomTkinter en Python 3.14 tiene comportamientos inconsistentes con grab_set y CTkScrollableFrame que requieren workarounds específicos",
+        "La conversión RGB→CMYK es una aproximación útil para estimación de costos pero no reemplaza el análisis del RIP real de la impresora",
+        "Separar los datos del usuario en AppData desde el inicio del proyecto evita problemas de migración al crear el instalador"
+    ],
+    "documents": [],
+    "links": [
+    {
+      "label": "GitHub",
+      "url": ""
+    },
+    {
+      "label": "Demo",
+      "url": ""
+    },
+    {
+      "label": "Website",
+      "url": ""
+    }
+  ]
+}

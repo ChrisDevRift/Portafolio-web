@@ -1,0 +1,40 @@
+{
+  "fullName": "Mi nombre",
+  "professionalTitle": "Titulo Profesional",
+  "headline": "Diseño y desarrollo soluciones", 
+
+  "about": {
+    "short": "Ingeniero",
+    "long": "Soy Ingeniero"
+  },
+
+  "location": {
+    "country": "México",
+    "state": "Yucatán",
+    "city": "Tizimín"
+  },
+
+  "email": "tumail@gmail.com",
+
+  "phone": "",
+
+  "website": "",
+
+  "avatar": "",
+
+  "resume": {
+    "es": "",
+    "en": ""
+  },
+
+  "languages": [
+    {
+      "name": "Español",
+      "level": "Nativo"
+    },
+    {
+      "name": "Inglés",
+      "level": "Intermedio"
+    }
+  ]
+}

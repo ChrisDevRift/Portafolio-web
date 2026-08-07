@@ -1,0 +1,24 @@
+{
+  "categories": [
+    {
+      "name": "Backend",
+      "skills": [
+        {
+          "name": "Express.js",
+          "level": 80,
+          "years": 2
+        }
+      ]
+    },
+    {
+      "name": "Frontend",
+      "skills": [
+        {
+          "name": "Flutter",
+          "level": 80,
+          "years": 1
+        }
+      ]
+    }
+  ]
+}

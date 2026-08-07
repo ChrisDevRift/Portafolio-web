@@ -1,0 +1,132 @@
+{
+    "id": 1,
+    "slug": "ahau-tech",
+    "title": "Ahau Tech",
+    "subtitle": "Sitio de contenido tech en español con headless CMS",
+
+    "featured": true,
+
+    "status": "development",
+
+    "year": 2026,
+
+    "category": [
+        "Content Platform",
+        "Headless CMS",
+        "SEO"
+    ],
+
+    "description": "AhauTech es un sitio de contenido en español enfocado en tecnología, inteligencia artificial, finanzas, desarrollo de software y gaming. Construido con Next.js 16 (App Router) y WordPress headless vía WPGraphQL, con foco en performance, SEO técnico y experiencia de lectura. Incluye ISR con revalidación por webhook, modo oscuro/claro, tabla de contenidos dinámica, configuración de lectura personalizable (fuente, tamaño, espaciado, alto contraste), botones de compartir, banner de cookies con GA4 consent mode, y cumplimiento legal (aviso de privacidad conforme a ley mexicana, disclosure de afiliados FTC).",
+
+    "shortDescription": "Sitio de contenido tech en español (Next.js + WordPress headless) con foco en SEO, performance y accesibilidad de lectura.",
+
+    "problem": "La gestión de contenido y la optimización para motores de búsqueda son desafíos complejos en un entorno headless, especialmente cuando se requiere una experiencia de usuario superior y cumplimiento legal.",
+
+    "solution": "Implementar una estrategia integral que combine la flexibilidad de un CMS headless con herramientas de optimización SEO y cumplimiento legal, garantizando una experiencia de usuario superior y visibilidad en línea.",
+
+    "coverImage": "",
+
+    "gallery": [],
+
+    "technologies": [
+        "Next.js 16 (App Router)",
+        "React Server Components",
+        "WordPress (Headless CMS)",
+        "WPGraphQL",
+        "Tailwind CSS v4",
+        "TypeScript",
+        "ISR + Webhook Revalidation",
+        "Yoast SEO (WPGraphQL)",
+        "Google Analytics 4 (Consent Mode)",
+        "Vercel"
+    ],
+
+    "features": [
+        "Modo oscuro/claro con script anti-flash",
+        "Paginación basada en cursor",
+        "Parser de shortcodes personalizados ([youtube], [affiliate])",
+        "Tabla de contenidos dinámica con IntersectionObserver",
+        "Botones de compartir (sidebar sticky en desktop, FAB en mobile)",
+        "Panel de configuración de lectura (tamaño y familia de fuente, interlineado, ancho, alto contraste) persistente en localStorage",
+        "Banner de cookies con GA4 consent mode (denegado por defecto)",
+        "Sitemap, robots.txt y llms.txt generados dinámicamente",
+        "Endpoint REST personalizado en WordPress para banners/enlaces de afiliados, protegido con API key",
+        "Páginas legales conforme a legislación mexicana y disclosure de afiliados FTC"
+    ],
+
+    "responsibilities": [
+        "Arquitectura completa del proyecto (frontend y estrategia headless CMS)",
+        "Diseño de capa de datos desacoplada (/lib/wp, /lib/seo) sin lógica de negocio en componentes",
+        "Implementación de ISR con revalidación por webhook desde WordPress",
+        "Integración de WPGraphQL con mappers de normalización de datos",
+        "Optimización SEO técnico (metadata dinámica, sitemap, datos estructurados)",
+        "Desarrollo de UI reutilizable con Server Components por defecto",
+        "Cumplimiento legal y de privacidad (México + disclosure de afiliados)"
+    ],
+
+    "client": "Proyecto propio",
+
+    "duration": {
+        "start": "2026",
+        "end": ""
+    },
+
+    "teamSize": 1,
+
+    "role": "Full Stack Developer / Arquitecto de software",
+
+    "challenges": [
+        {
+            "title": "Rutas dinámicas unificadas",
+            "description": "Resolver conflicto de rutas dinámicas ([slug] vs [page]) unificándolas en una sola ruta con fallback post-then-page"
+        },
+        {
+            "title": "Tailwind v4 sin config",
+            "description": "Adaptar Tailwind v4 (sin tailwind.config.ts) usando @theme y @utility directamente en globals.css"
+        },
+        {
+            "title": "Normalización de contenido WP",
+            "description": "Normalizar comillas tipográficas de WordPress (&#8221;/&#8243;) que rompían el parsing de atributos en shortcodes"
+        },
+        {
+            "title": "Imágenes duplicadas",
+            "description": "Evitar duplicación de imágenes destacadas entre el layout y el contenido del artículo"
+        },
+        {
+            "title": "Configuración next/image",
+            "description": "Configurar next/image correctamente con remotePatterns para el dominio del CMS headless"
+        }
+    ],
+
+    "results": [
+        "Plataforma funcional de contenido tech con arquitectura headless (Next.js + WordPress) completamente desacoplada",
+        "Mejora significativa en rendimiento y experiencia de usuario gracias a ISR con revalidación por webhook",
+        "Base sólida para escalabilidad de contenido y crecimiento SEO técnico (sitemap dinámico, metadata estructurada, robots.txt)",
+        "Sistema de lectura altamente personalizable que mejora la retención del usuario (modo oscuro, tipografía, espaciado, alto contraste)",
+        "Integración completa de analítica (GA4 con Consent Mode) y cumplimiento legal (privacidad y afiliados) lista para producción",
+        "Arquitectura modular que permite iterar nuevas funcionalidades sin afectar la capa de datos ni SEO"
+    ],
+
+    "lessons": [
+        "Separar estrictamente datos (/lib/wp), SEO (/lib/seo) y UI (/components) facilita mantenimiento a largo plazo",
+        "Normalizar contenido HTML proveniente de WordPress antes de renderizarlo evita errores sutiles en producción",
+        "ISR + revalidación por webhook ofrece un balance sólido entre performance y contenido actualizado sin necesidad de SSR completo"
+    ],
+
+    "documents": [],
+
+    "links": [
+    {
+      "label": "GitHub",
+      "url": ""
+    },
+    {
+      "label": "Demo",
+      "url": ""
+    },
+    {
+      "label": "Website",
+      "url": ""
+    }
+  ]
+}

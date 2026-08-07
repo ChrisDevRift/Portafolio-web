@@ -1,0 +1,115 @@
+@import "tailwindcss";
+
+/*
+  Sistema de diseño — "precisión de ingeniería"
+  Neutros fríos casi monocromáticos + un único acento (cobalto),
+  como un plano técnico. Nada de paletas cálidas tipo crema+terracota.
+*/
+:root {
+  --color-bg: #fafbfc;
+  --color-surface: #ffffff;
+  --color-border: #e4e7ec;
+  --color-fg: #14161c;
+  --color-fg-muted: #5b6270;
+  --color-fg-subtle: #9aa1ae;
+  --color-accent: #3457d5;
+  --color-accent-fg: #ffffff;
+  --color-grid-line: rgba(20, 22, 28, 0.06);
+
+  --ease-standard: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.dark {
+  --color-bg: #0b0d12;
+  --color-surface: #14161c;
+  --color-border: #262a34;
+  --color-fg: #e9eaee;
+  --color-fg-muted: #9aa1ae;
+  --color-fg-subtle: #5b6270;
+  --color-accent: #6d8bff;
+  --color-accent-fg: #0b0d12;
+  --color-grid-line: rgba(233, 234, 238, 0.06);
+}
+
+@theme inline {
+  --color-bg: var(--color-bg);
+  --color-surface: var(--color-surface);
+  --color-border: var(--color-border);
+  --color-fg: var(--color-fg);
+  --color-fg-muted: var(--color-fg-muted);
+  --color-fg-subtle: var(--color-fg-subtle);
+  --color-accent: var(--color-accent);
+  --color-accent-fg: var(--color-accent-fg);
+
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+* {
+  border-color: var(--color-border);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-bg);
+  color: var(--color-fg);
+  font-family: var(--font-sans);
+  transition: background-color 0.3s var(--ease-standard), color 0.3s var(--ease-standard);
+  min-height: 100%;
+}
+
+/* Grid de fondo muy tenue, como un plano técnico. Se activa por sección. */
+.blueprint-grid {
+  background-image:
+    linear-gradient(to right, var(--color-grid-line) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--color-grid-line) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+/* Marca de esquina — firma visual recurrente del sitio. */
+.corner-mark {
+  position: relative;
+}
+.corner-mark::before,
+.corner-mark::after {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border: 1px solid var(--color-border);
+  transition: border-color 0.25s var(--ease-standard);
+  pointer-events: none;
+}
+.corner-mark::before {
+  top: -1px;
+  left: -1px;
+  border-right: none;
+  border-bottom: none;
+}
+.corner-mark::after {
+  bottom: -1px;
+  right: -1px;
+  border-left: none;
+  border-top: none;
+}
+.corner-mark:hover::before,
+.corner-mark:hover::after {
+  border-color: var(--color-accent);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+::selection {
+  background: var(--color-accent);
+  color: var(--color-accent-fg);
+}

@@ -1,0 +1,11 @@
+{
+  "education": [
+    {
+      "institution": "Universidad",
+      "degree": "Licenciatura",
+      "startYear": 2019,
+      "endYear": 2025,
+      "status": "Graduado"
+    }
+  ]
+}

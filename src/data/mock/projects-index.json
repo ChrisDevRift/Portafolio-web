@@ -1,0 +1,23 @@
+{
+  "lastUpdated": "2026-06-26",
+  "projects": [
+    {
+      "id": 1,
+      "slug": "ahau-tech",
+      "title": "Ahau",
+      "featured": true,
+      "status": "completed",
+      "coverImage": "",
+      "order": 1
+    },
+    {
+      "id": 2,
+      "slug": "printcost",
+      "title": "PrintCost",
+      "featured": true,
+      "status": "completed",
+      "coverImage": "",
+      "order": 2
+    }
+  ]
+}

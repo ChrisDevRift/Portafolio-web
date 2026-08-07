@@ -1,0 +1,18 @@
+{
+  "experience": [
+    {
+      "company": "Freelance",
+      "position": "Desarrollador Full Stack",
+      "startDate": "2022-01",
+      "endDate": null,
+      "current": true,
+      "location": "México",
+      "description": [
+        "Desarrollo"
+      ],
+      "technologies": [
+        "Python"
+      ]
+    }
+  ]
+}
